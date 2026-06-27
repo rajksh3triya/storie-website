@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
           initScrollReveals();
         }, 800);
       }
-    }, 2200); // Allow preloader animation to show fully
+    }, 150); // Start the logo fly transition immediately (150ms buffer)
   }
 
   if (preloader) {

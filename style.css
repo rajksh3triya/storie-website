@@ -180,17 +180,8 @@ h3 { font-size: 1.8rem; }
   height: 120px;
   width: auto;
   object-fit: contain;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInPreloaderLogo 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: 0.3s;
-}
-
-@keyframes fadeInPreloaderLogo {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .header-logo {
