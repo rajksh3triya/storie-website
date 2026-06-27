@@ -1,0 +1,12 @@
+# System & Temp Files
+.DS_Store
+Thumbs.db
+*.log
+tmp/
+temp/
+
+# IDE & Editor Configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace

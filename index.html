@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="STORIE is a high-end luxury interior design studio creating bespoke, timeless, and harmonious spaces tailored to your lifestyle.">
+  <title>STORIE | Bespoke Luxury Interior Design Studio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons for UI elements -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Preloader for Luxury Entrance -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-content">
+      <div class="logo-container vertical">
+        <img src="assets/logo.png" alt="STORIE Logo" class="preloader-logo">
+      </div>
+      <div class="loader-line">
+        <div class="loader-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header & Navigation -->
+  <header class="main-header" id="mainHeader">
+    <div class="header-container">
+      <a href="#" class="logo-link">
+        <img src="assets/logo.png" alt="STORIE Logo" class="header-logo">
+      </a>
+      
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">Philosophy</a></li>
+          <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+          <li><a href="#process" class="nav-link">Journey</a></li>
+          <li><a href="#enquiry" class="nav-link btn-gold-outline">Inquire</a></li>
+        </ul>
+      </nav>
+      
+      <!-- Mobile Menu Trigger -->
+      <button class="mobile-menu-trigger" id="menuTrigger" aria-label="Toggle Navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Overlay -->
+  <div class="mobile-nav-overlay" id="mobileNav">
+    <nav class="mobile-nav-content">
+      <ul>
+        <li><a href="#" class="mobile-link">Home</a></li>
+        <li><a href="#about" class="mobile-link">Philosophy</a></li>
+        <li><a href="#portfolio" class="mobile-link">Portfolio</a></li>
+        <li><a href="#process" class="mobile-link">Journey</a></li>
+        <li><a href="#enquiry" class="mobile-link btn-gold">Inquire Now</a></li>
+      </ul>
+      <div class="mobile-nav-footer">
+        <p>studio@storieinteriors.com</p>
+        <p>+1 (800) 459-2342</p>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-background" id="heroBg">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h3 class="hero-subtitle fade-in">Bespoke Design Studio</h3>
+      <h1 class="hero-title fade-in">Spaces that tell your <span class="italic">story.</span></h1>
+      <p class="hero-description fade-in">We craft high-end architectural interiors that balance luxury, functionality, and timeless aesthetics.</p>
+      <div class="hero-cta fade-in">
+        <a href="#portfolio" class="btn-gold">Explore Portfolio</a>
+        <a href="#enquiry" class="btn-text">Schedule Consultation <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    </div>
+    
+    <!-- Mouse scroll indicator -->
+    <a href="#about" class="scroll-indicator" aria-label="Scroll Down">
+      <span class="mouse">
+        <span class="wheel"></span>
+      </span>
+      <span class="label">Discover</span>
+    </a>
+  </section>
+
+  <!-- About / Philosophy Section -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="grid-2">
+        <div class="about-image-wrapper reveal-left">
+          <img src="assets/philosophy_detail.png" alt="Interior Design Materials and Floorplan Detail" class="parallax-img">
+          <div class="accent-border"></div>
+        </div>
+        <div class="about-content-wrapper reveal-right">
+          <h2 class="section-title">The Art of <br><span class="italic">Curation</span></h2>
+          <p class="section-desc">At STORIE, we believe an interior is not simply a space; it is a canvas of self-expression. We reject the mass-produced, choosing instead to curate bespoke environments that resonate with the distinct identities of those who inhabit them.</p>
+          
+          <div class="philosophy-items">
+            <div class="phil-item">
+              <div class="num">01</div>
+              <div class="text">
+                <h3>Architectural Vision</h3>
+                <p>We work with spatial flows to maximize volume, light, and natural materials, creating an intuitive harmony.</p>
+              </div>
+            </div>
+            
+            <div class="phil-item">
+              <div class="num">02</div>
+              <div class="text">
+                <h3>Bespoke Artistry</h3>
+                <p>Collaborating with global master artisans to commission one-of-a-kind furniture, millwork, and finishes.</p>
+              </div>
+            </div>
+            
+            <div class="phil-item">
+              <div class="num">03</div>
+              <div class="text">
+                <h3>Timeless Curation</h3>
+                <p>We blend modern minimalism with historical texture, resulting in rooms that feel both current and eternal.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="container">
+      <div class="portfolio-header">
+        <h2 class="section-title text-center">Selected <span class="italic">Works</span></h2>
+        <p class="section-desc text-center">Explore a collection of residential and private spaces curated by our studio.</p>
+        
+        <!-- Filter Controls -->
+        <div class="filter-controls">
+          <button class="filter-btn active" data-filter="all">All Spaces</button>
+          <button class="filter-btn" data-filter="living">Living Rooms</button>
+          <button class="filter-btn" data-filter="culinary">Culinary</button>
+          <button class="filter-btn" data-filter="sanctuary">Sanctuaries</button>
+        </div>
+      </div>
+      
+      <!-- Portfolio Grid -->
+      <div class="portfolio-grid" id="portfolioGrid">
+        
+        <!-- Project 1 -->
+        <div class="portfolio-item show living" data-id="1">
+          <div class="portfolio-img-container">
+            <img src="assets/hero_living.png" alt="Malabar Hill Penthouse Living Room">
+            <div class="portfolio-hover-overlay">
+              <div class="hover-content">
+                <span class="project-space">Living Room</span>
+                <h3 class="project-title">Malabar Hill Penthouse</h3>
+                <span class="project-location">Mumbai, India</span>
+                <span class="btn-circle-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 2 -->
+        <div class="portfolio-item show culinary" data-id="2">
+          <div class="portfolio-img-container">
+            <img src="assets/portfolio_kitchen.png" alt="Lutyens' Villa Kitchen">
+            <div class="portfolio-hover-overlay">
+              <div class="hover-content">
+                <span class="project-space">Culinary Space</span>
+                <h3 class="project-title">Lutyens' Villa Kitchen</h3>
+                <span class="project-location">New Delhi, India</span>
+                <span class="btn-circle-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 3 -->
+        <div class="portfolio-item show sanctuary" data-id="3">
+          <div class="portfolio-img-container">
+            <img src="assets/portfolio_bedroom.png" alt="Jubilee Hills Suite Sanctuary">
+            <div class="portfolio-hover-overlay">
+              <div class="hover-content">
+                <span class="project-space">Sanctuary</span>
+                <h3 class="project-title">Jubilee Hills Suite</h3>
+                <span class="project-location">Hyderabad, India</span>
+                <span class="btn-circle-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Project 4 -->
+        <div class="portfolio-item show sanctuary" data-id="4">
+          <div class="portfolio-img-container">
+            <img src="assets/portfolio_bathroom.png" alt="Bandra Sea-Facing Retreat Spa Bathroom">
+            <div class="portfolio-hover-overlay">
+              <div class="hover-content">
+                <span class="project-space">Sanctuary / Bath</span>
+                <h3 class="project-title">Bandra Sea-Facing Retreat</h3>
+                <span class="project-location">Mumbai, India</span>
+                <span class="btn-circle-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Detail Modal -->
+  <div class="portfolio-modal" id="portfolioModal">
+    <button class="modal-close" id="modalClose" aria-label="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+    <div class="modal-content">
+      <div class="modal-grid">
+        <div class="modal-image-pane">
+          <img src="" alt="" id="modalImg">
+        </div>
+        <div class="modal-info-pane">
+          <span class="modal-category" id="modalCat">Living Room</span>
+          <h2 class="modal-title" id="modalTitle">Malabar Hill Penthouse</h2>
+          <p class="modal-description" id="modalDesc">Detailed overview of the Malabar Hill Penthouse project. This room incorporates natural travertine finishes, fluted panel details, and custom bouclé furnishings to establish a peaceful, sea-facing luxury domestic experience.</p>
+          
+          <div class="project-meta-list">
+            <div class="meta-item">
+              <span class="meta-label">Location</span>
+              <span class="meta-val" id="modalLoc">London, UK</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Year Completed</span>
+              <span class="meta-val" id="modalYear">2025</span>
+            </div>
+            <div class="meta-item">
+              <span class="meta-label">Services Rendered</span>
+              <span class="meta-val" id="modalServices">Spatial Architecture, Curation & Styling</span>
+            </div>
+          </div>
+          
+          <a href="#enquiry" class="btn-gold modal-cta-btn" id="modalInquireBtn">Inquire About This Style</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- The Journey / Process Section -->
+  <section class="journey-section" id="process">
+    <div class="container">
+      <h2 class="section-title text-center">The Design <span class="italic">Journey</span></h2>
+      <p class="section-desc text-center">A comprehensive, step-by-step masterplan from conceptualization to finishing touches.</p>
+      
+      <div class="journey-flow">
+        
+        <!-- Step 1 -->
+        <div class="journey-step reveal-up">
+          <div class="step-num">01</div>
+          <div class="step-card">
+            <h3>Vision & Consultation</h3>
+            <p>A personal meeting to define your functional needs, aesthetic inspirations, and architectural potential of the canvas.</p>
+          </div>
+        </div>
+        
+        <!-- Step 2 -->
+        <div class="journey-step reveal-up">
+          <div class="step-num">02</div>
+          <div class="step-card">
+            <h3>Concept & Materiality</h3>
+            <p>Drafting spatial layouts, architectural sketching, and establishing a tailored physical mood board of marbles, linen, and metals.</p>
+          </div>
+        </div>
+        
+        <!-- Step 3 -->
+        <div class="journey-step reveal-up">
+          <div class="step-num">03</div>
+          <div class="step-card">
+            <h3>Technical Architecture</h3>
+            <p>Developing full 3D visual renderings and comprehensive electrical, millwork, and lighting layouts for contractors.</p>
+          </div>
+        </div>
+        
+        <!-- Step 4 -->
+        <div class="journey-step reveal-up">
+          <div class="step-num">04</div>
+          <div class="step-card">
+            <h3>Artisanal Curation</h3>
+            <p>Procuring bespoke furniture, handcrafted light installations, and commissioning custom details from master workshops globally.</p>
+          </div>
+        </div>
+        
+        <!-- Step 5 -->
+        <div class="journey-step reveal-up">
+          <div class="step-num">05</div>
+          <div class="step-card">
+            <h3>Styling & Reveal</h3>
+            <p>On-site staging, art hanging, layering texture, and finishing styling coordinates to deliver your fully completed STORIE.</p>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Enquiry / Contact Section -->
+  <section class="enquiry-section" id="enquiry">
+    <div class="enquiry-background"></div>
+    <div class="container">
+      <div class="grid-2">
+        
+        <!-- Contact Info Pane -->
+        <div class="contact-info-pane reveal-left">
+          <h2 class="section-title text-light">Begin Your <br><span class="italic text-gold">STORIE</span></h2>
+          <p class="section-desc text-light">We accept a limited number of commissions annually to maintain our exceptional standard of artisanal detailing. Submit an enquiry to schedule your private design consultation.</p>
+          
+          <div class="contact-methods">
+            <div class="method-item">
+              <i class="fa-solid fa-location-dot text-gold"></i>
+              <div>
+                <h4>The Atelier</h4>
+                <p>10, Lodha Altamount, Altamount Road, Cumballa Hill, Mumbai, 400026</p>
+              </div>
+            </div>
+            
+            <div class="method-item">
+              <i class="fa-solid fa-phone text-gold"></i>
+              <div>
+                <h4>Direct Line</h4>
+                <p>+91 22 6902 4500</p>
+              </div>
+            </div>
+            
+            <div class="method-item">
+              <i class="fa-solid fa-envelope text-gold"></i>
+              <div>
+                <h4>General Correspondence</h4>
+                <p>studio@storieinteriors.com</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links-container">
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="Pinterest"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <!-- Enquiry Form Pane -->
+        <div class="enquiry-form-pane reveal-right" id="enquiryFormPane">
+          <form class="enquiry-form" id="enquiryForm" novalidate>
+            <h3 class="form-title">Consultation Enquiry</h3>
+            
+            <div class="form-grid">
+              
+              <!-- Full Name -->
+              <div class="form-group full-width">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" class="form-input" placeholder="e.g., Alexander Sterling" required>
+                <span class="error-msg" id="fullNameError">This field is required.</span>
+              </div>
+              
+              <!-- Email -->
+              <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" class="form-input" placeholder="e.g., alex@sterlingholdings.com" required>
+                <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+              </div>
+              
+              <!-- Phone -->
+              <div class="form-group">
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" class="form-input" placeholder="e.g., +91 98200 98200" required>
+                <span class="error-msg" id="phoneError">Please enter a valid phone number.</span>
+              </div>
+              
+              <!-- Project Location -->
+              <div class="form-group full-width">
+                <label for="location">Project Location *</label>
+                <input type="text" id="location" class="form-input" placeholder="e.g., Altamount Road, Mumbai or Lutyens' Delhi" required>
+                <span class="error-msg" id="locationError">Please specify the project location.</span>
+              </div>
+              
+              <!-- Project Type Dropdown -->
+              <div class="form-group">
+                <label for="projectType">Project Type *</label>
+                <div class="select-wrapper">
+                  <select id="projectType" class="form-input" required>
+                    <option value="" disabled selected>Select space type...</option>
+                    <option value="Residential">Full Residential Architecture</option>
+                    <option value="Commercial">Premium Commercial / Office</option>
+                    <option value="Hospitality">Bespoke Hospitality / Lounge</option>
+                    <option value="SingleRoom">Single Sanctuary / Suite</option>
+                    <option value="Consultation">Private Styling & Art Curation</option>
+                  </select>
+                </div>
+                <span class="error-msg" id="projectTypeError">Please select a project type.</span>
+              </div>
+              
+              <!-- Estimated Budget Range -->
+              <div class="form-group">
+                <label for="budget">Investment Scale *</label>
+                <div class="select-wrapper">
+                  <select id="budget" class="form-input" required>
+                    <option value="" disabled selected>Select investment range...</option>
+                    <option value="25lakhs-50lakhs">₹25 Lakhs – ₹50 Lakhs</option>
+                    <option value="50lakhs-1crore">₹50 Lakhs – ₹1 Crore</option>
+                    <option value="1crore-3crores">₹1 Crore – ₹3 Crores</option>
+                    <option value="3crores-plus">₹3 Crores +</option>
+                  </select>
+                </div>
+                <span class="error-msg" id="budgetError">Please select your budget scale.</span>
+              </div>
+              
+              <!-- Project Timeline -->
+              <div class="form-group full-width">
+                <label for="timeline">Desired Project Timeline *</label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="timeline" value="immediate" required>
+                    <span class="radio-custom"></span>
+                    Immediate (Within 1 Month)
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="timeline" value="3-6months" required>
+                    <span class="radio-custom"></span>
+                    3 to 6 Months
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="timeline" value="6months-plus" required>
+                    <span class="radio-custom"></span>
+                    6+ Months / Planning Stage
+                  </label>
+                </div>
+                <span class="error-msg" id="timelineError">Please select a desired timeline.</span>
+              </div>
+              
+              <!-- Details / Message -->
+              <div class="form-group full-width">
+                <label for="visionText">Describe Your Vision *</label>
+                <textarea id="visionText" class="form-input textarea" rows="4" placeholder="Tell us about your space, structural aspirations, and key requirements..." required></textarea>
+                <span class="error-msg" id="visionTextError">Please provide some details about your vision.</span>
+              </div>
+              
+              <!-- How did you hear about us? -->
+              <div class="form-group full-width">
+                <label for="referral">How did you hear about STORIE?</label>
+                <input type="text" id="referral" class="form-input" placeholder="e.g., Vogue Living, Architectural Digest, Instagram, Friend">
+              </div>
+              
+            </div>
+            
+            <button type="submit" class="btn-gold btn-submit" id="btnSubmit">
+              <span class="btn-text-content">Submit Inquiry</span>
+              <span class="btn-loading"><i class="fa-solid fa-spinner fa-spin"></i></span>
+            </button>
+          </form>
+          
+          <!-- Success State -->
+          <div class="success-state" id="successState">
+            <div class="success-icon-wrap">
+              <i class="fa-solid fa-check"></i>
+            </div>
+            <h3>Inquiry Successfully Received</h3>
+            <p class="success-intro">Thank you for sharing your vision with us, <span id="clientName" class="semibold text-dark"></span>.</p>
+            <p>Our lead design consultant will review your spatial details and project scale. We will be in contact via email (<span id="clientEmail" class="text-gold"></span>) or phone within 24 business hours to arrange your private consultation session.</p>
+            
+            <div class="inquiry-summary">
+              <h4>Inquiry Summary:</h4>
+              <ul>
+                <li><strong>Project Type:</strong> <span id="summaryType"></span></li>
+                <li><strong>Investment Scale:</strong> <span id="summaryBudget"></span></li>
+                <li><strong>Location:</strong> <span id="summaryLocation"></span></li>
+              </ul>
+            </div>
+            
+            <button class="btn-gold-outline" id="btnResetForm">Submit Another Inquiry</button>
+          </div>
+          
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="main-footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-grid">
+          
+          <!-- Column 1: Brand -->
+            <div class="footer-logo-wrap">
+              <img src="assets/logo.png" alt="STORIE Logo" class="footer-logo">
+            </div>
+            <p class="brand-tagline">Creating architectural legacies through tailored curation and spatial mastery.</p>
+          </div>
+          
+          <!-- Column 2: Navigation Links -->
+          <div class="footer-col">
+            <h4>Navigational Path</h4>
+            <ul>
+              <li><a href="#">Home Portfolio</a></li>
+              <li><a href="#about">Studio Philosophy</a></li>
+              <li><a href="#portfolio">Our Selected Spaces</a></li>
+              <li><a href="#process">The Craft Process</a></li>
+              <li><a href="#enquiry">Consultation Room</a></li>
+            </ul>
+          </div>
+          
+          <!-- Column 3: Contact details -->
+          <div class="footer-col">
+            <h4>The Atelier Coordinates</h4>
+            <p>10, Lodha Altamount, Altamount Road<br>Cumballa Hill, Mumbai, 400026</p>
+            <p class="footer-contact-info">
+              <span>E:</span> studio@storieinteriors.com<br>
+              <span>T:</span> +91 22 6902 4500
+            </p>
+          </div>
+          
+          <!-- Column 4: Newsletter -->
+          <div class="footer-col newsletter-col">
+            <h4>Atelier Journal</h4>
+            <p>Subscribe to receive curated architectural features and private exhibition invitations.</p>
+            <form class="footer-newsletter-form" id="newsletterForm" onsubmit="event.preventDefault(); alert('Thank you for subscribing to the STORIE Atelier Journal.'); this.reset();">
+              <input type="email" placeholder="Your Email Address" required class="newsletter-input" aria-label="Email for Newsletter">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right-long"></i></button>
+            </form>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="footer-bottom-flex">
+          <p class="copyright">&copy; 2026 STORIE Interior Design. All rights reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Charter</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
