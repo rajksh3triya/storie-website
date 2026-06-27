@@ -217,18 +217,7 @@ h3 { font-size: 1.8rem; }
   100% { width: 100%; }
 }
 
-/* SVG draw animation */
-.logo-arch path {
-  stroke-dasharray: 400;
-  stroke-dashoffset: 400;
-  animation: drawLogo 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
 
-@keyframes drawLogo {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
 
 /* --- 4. BUTTONS & ACTIONS --- */
 .btn-gold {
