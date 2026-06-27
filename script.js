@@ -73,10 +73,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (preloader) {
-    if (document.readyState === 'complete') {
-      dismissPreloader();
+    if (preloaderLogo) {
+      if (preloaderLogo.complete) {
+        dismissPreloader();
+      } else {
+        preloaderLogo.addEventListener('load', dismissPreloader);
+        // Fallback safety trigger (if image fails to report load status)
+        setTimeout(dismissPreloader, 1500);
+      }
     } else {
-      window.addEventListener('load', dismissPreloader);
+      dismissPreloader();
     }
   }
 
