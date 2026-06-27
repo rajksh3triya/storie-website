@@ -32,8 +32,13 @@ document.addEventListener('DOMContentLoaded', () => {
         flyLogo.style.zIndex = '10000';
         flyLogo.style.objectFit = 'contain';
         flyLogo.style.pointerEvents = 'none';
-        flyLogo.style.transition = 'all 2.8s cubic-bezier(0.76, 0, 0.24, 1)';
         document.body.appendChild(flyLogo);
+
+        // Force browser layout recalculation (reflow) so it registers the starting position
+        void flyLogo.offsetWidth;
+
+        // Apply transition styling after the reflow is complete
+        flyLogo.style.transition = 'all 2.8s cubic-bezier(0.76, 0, 0.24, 1)';
 
         // 3. Hide the static preloader logo
         preloaderLogo.style.opacity = '0';
@@ -41,13 +46,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // 4. Start the preloader fade out (turns background transparent)
         preloader.classList.add('fade-out');
 
-        // 5. In the next frame, animate the clone logo to the header logo's position
-        requestAnimationFrame(() => {
+        // 5. Use a small timeout to let the browser paint the initial frame, then transition
+        setTimeout(() => {
           flyLogo.style.top = `${headerRect.top}px`;
           flyLogo.style.left = `${headerRect.left}px`;
           flyLogo.style.width = `${headerRect.width}px`;
           flyLogo.style.height = `${headerRect.height}px`;
-        });
+        }, 50);
 
         // 6. Complete the transition: make header logo visible, clean up clone logo
         setTimeout(() => {
@@ -58,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 300);
           preloader.style.display = 'none';
           initScrollReveals();
-        }, 2800); // matches the transition time (2.8s)
+        }, 2850); // Matches the flight duration (2.8s) + the paint buffer (50ms)
         
       } else {
         // Fallback if elements aren't found
