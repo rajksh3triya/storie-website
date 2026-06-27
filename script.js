@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         flyLogo.style.zIndex = '10000';
         flyLogo.style.objectFit = 'contain';
         flyLogo.style.pointerEvents = 'none';
-        flyLogo.style.transition = 'all 2.2s cubic-bezier(0.16, 1, 0.3, 1)';
+        flyLogo.style.transition = 'all 2.8s cubic-bezier(0.76, 0, 0.24, 1)';
         document.body.appendChild(flyLogo);
 
         // 3. Hide the static preloader logo
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }, 300);
           preloader.style.display = 'none';
           initScrollReveals();
-        }, 2200); // matches the transition time (2.2s)
+        }, 2800); // matches the transition time (2.8s)
         
       } else {
         // Fallback if elements aren't found
