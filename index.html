@@ -448,6 +448,24 @@
                 <span class="error-msg" id="timelineError">Please select a desired timeline.</span>
               </div>
               
+              <!-- Floor Plan Upload Field -->
+              <div class="form-group full-width">
+                <label for="floorPlan">Upload Floor Plan / Spatial Layout (Optional)</label>
+                <div class="file-upload-container">
+                  <input type="file" id="floorPlan" class="file-input-hidden" accept=".pdf,.jpg,.jpeg,.png,.dwg,.zip">
+                  <div class="file-upload-trigger" id="fileUploadTrigger">
+                    <i class="fa-solid fa-cloud-arrow-up text-gold"></i>
+                    <span class="file-upload-text" id="fileUploadText">Choose a file or drag it here</span>
+                    <span class="file-upload-hint">Supported formats: PDF, JPEG, PNG, CAD (.dwg), ZIP (Max 15MB)</span>
+                  </div>
+                  <div class="file-info-preview" id="filePreview" style="display: none;">
+                    <i class="fa-solid fa-file-pdf text-gold" id="fileIcon"></i>
+                    <span class="file-name" id="fileName">floorplan.pdf</span>
+                    <button type="button" class="btn-remove-file" id="btnRemoveFile" aria-label="Remove File"><i class="fa-solid fa-xmark"></i></button>
+                  </div>
+                </div>
+              </div>
+              
               <!-- Details / Message -->
               <div class="form-group full-width">
                 <label for="visionText">Describe Your Vision *</label>
@@ -484,6 +502,7 @@
                 <li><strong>Project Type:</strong> <span id="summaryType"></span></li>
                 <li><strong>Investment Scale:</strong> <span id="summaryBudget"></span></li>
                 <li><strong>Location:</strong> <span id="summaryLocation"></span></li>
+                <li><strong>Floor Plan:</strong> <span id="summaryFile">None</span></li>
               </ul>
             </div>
             

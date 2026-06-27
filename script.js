@@ -237,6 +237,14 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('summaryBudget').textContent = budgetText;
           document.getElementById('summaryLocation').textContent = locationInput;
 
+          const floorPlanInput = document.getElementById('floorPlan');
+          const summaryFile = document.getElementById('summaryFile');
+          if (floorPlanInput && floorPlanInput.files.length > 0) {
+            summaryFile.textContent = floorPlanInput.files[0].name;
+          } else {
+            summaryFile.textContent = "None attached";
+          }
+
           // Transition View
           enquiryForm.style.display = 'none';
           successState.style.display = 'flex';
@@ -253,6 +261,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnReset) {
       btnReset.addEventListener('click', () => {
         enquiryForm.reset();
+        
+        // Clear file upload previews
+        const btnRemoveFile = document.getElementById('btnRemoveFile');
+        if (btnRemoveFile) btnRemoveFile.click();
+        
         successState.style.display = 'none';
         enquiryForm.style.display = 'block';
         
@@ -351,6 +364,87 @@ document.addEventListener('DOMContentLoaded', () => {
     if (group) {
       group.classList.add('invalid');
     }
+  }
+
+  /* ==========================================================================
+     7.5 FLOOR PLAN FILE UPLOAD HANDLERS
+     ========================================================================== */
+  const floorPlan = document.getElementById('floorPlan');
+  const fileUploadTrigger = document.getElementById('fileUploadTrigger');
+  const filePreview = document.getElementById('filePreview');
+  const fileName = document.getElementById('fileName');
+  const fileIcon = document.getElementById('fileIcon');
+  const btnRemoveFile = document.getElementById('btnRemoveFile');
+
+  if (fileUploadTrigger && floorPlan) {
+    // Click triggers file selector
+    fileUploadTrigger.addEventListener('click', () => {
+      floorPlan.click();
+    });
+
+    // Handle file selection
+    floorPlan.addEventListener('change', (e) => {
+      if (floorPlan.files.length > 0) {
+        const file = floorPlan.files[0];
+        fileName.textContent = file.name;
+
+        // Determine icon based on file extension
+        const ext = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+        if (ext === '.pdf') {
+          fileIcon.className = 'fa-solid fa-file-pdf text-gold';
+        } else if (ext === '.dwg' || ext === '.dxf') {
+          fileIcon.className = 'fa-solid fa-file-signature text-gold';
+        } else if (['.jpg', '.jpeg', '.png', '.gif', '.webp'].includes(ext)) {
+          fileIcon.className = 'fa-solid fa-file-image text-gold';
+        } else if (ext === '.zip' || ext === '.rar') {
+          fileIcon.className = 'fa-solid fa-file-zipper text-gold';
+        } else {
+          fileIcon.className = 'fa-solid fa-file text-gold';
+        }
+
+        // Display preview, hide trigger
+        fileUploadTrigger.style.display = 'none';
+        filePreview.style.display = 'flex';
+      }
+    });
+
+    // Remove selected file
+    if (btnRemoveFile) {
+      btnRemoveFile.addEventListener('click', (e) => {
+        e.stopPropagation(); // Avoid triggering trigger click
+        floorPlan.value = '';
+        filePreview.style.display = 'none';
+        fileUploadTrigger.style.display = 'flex';
+      });
+    }
+
+    // Drag and Drop support
+    ['dragenter', 'dragover'].forEach(eventName => {
+      fileUploadTrigger.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fileUploadTrigger.classList.add('dragover');
+      }, false);
+    });
+
+    ['dragleave', 'drop'].forEach(eventName => {
+      fileUploadTrigger.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        fileUploadTrigger.classList.remove('dragover');
+      }, false);
+    });
+
+    fileUploadTrigger.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files.length > 0) {
+        floorPlan.files = files;
+        // Trigger change event to fire preview logic
+        const event = new Event('change');
+        floorPlan.dispatchEvent(event);
+      }
+    }, false);
   }
 
   /* ==========================================================================
