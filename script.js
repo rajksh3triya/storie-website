@@ -1,19 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   /* ==========================================================================
-     1. PRELOADER DISMISSAL
+     1. PRELOADER DISMISSAL & LOGO FLY TRANSITION
      ========================================================================== */
   const preloader = document.getElementById('preloader');
+  const preloaderLogo = document.querySelector('.preloader-logo');
+  const headerLogo = document.querySelector('.header-logo');
+
+  // Hide header logo initially so it can fade in during the transition
+  if (headerLogo) {
+    headerLogo.style.opacity = '0';
+    headerLogo.style.transition = 'opacity 0.3s ease';
+  }
+
   if (preloader) {
     window.addEventListener('load', () => {
       setTimeout(() => {
-        preloader.classList.add('fade-out');
-        // Enable scroll reveals after preloader is gone
-        setTimeout(() => {
-          preloader.style.display = 'none';
-          initScrollReveals();
-        }, 800);
-      }, 2000); // Allow preloader animation to display fully
+        if (preloaderLogo && headerLogo) {
+          // 1. Get the current position and size of both logos
+          const preloaderRect = preloaderLogo.getBoundingClientRect();
+          const headerRect = headerLogo.getBoundingClientRect();
+
+          // 2. Create a temporary clone logo for the transition
+          const flyLogo = document.createElement('img');
+          flyLogo.src = preloaderLogo.src;
+          flyLogo.alt = "STORIE Logo Transition";
+          flyLogo.style.position = 'fixed';
+          flyLogo.style.top = `${preloaderRect.top}px`;
+          flyLogo.style.left = `${preloaderRect.left}px`;
+          flyLogo.style.width = `${preloaderRect.width}px`;
+          flyLogo.style.height = `${preloaderRect.height}px`;
+          flyLogo.style.zIndex = '10000';
+          flyLogo.style.objectFit = 'contain';
+          flyLogo.style.pointerEvents = 'none';
+          flyLogo.style.transition = 'all 1.0s cubic-bezier(0.16, 1, 0.3, 1)';
+          document.body.appendChild(flyLogo);
+
+          // 3. Hide the static preloader logo
+          preloaderLogo.style.opacity = '0';
+
+          // 4. Start the preloader fade out (turns background transparent)
+          preloader.classList.add('fade-out');
+
+          // 5. In the next frame, animate the clone logo to the header logo's position
+          requestAnimationFrame(() => {
+            flyLogo.style.top = `${headerRect.top}px`;
+            flyLogo.style.left = `${headerRect.left}px`;
+            flyLogo.style.width = `${headerRect.width}px`;
+            flyLogo.style.height = `${headerRect.height}px`;
+          });
+
+          // 6. Complete the transition: make header logo visible, clean up clone logo
+          setTimeout(() => {
+            headerLogo.style.opacity = '1';
+            flyLogo.style.opacity = '0';
+            setTimeout(() => {
+              flyLogo.remove();
+            }, 300);
+            preloader.style.display = 'none';
+            initScrollReveals();
+          }, 1000); // matches the transition time (1.0s)
+          
+        } else {
+          // Fallback if elements aren't found
+          preloader.classList.add('fade-out');
+          setTimeout(() => {
+            preloader.style.display = 'none';
+            if (headerLogo) headerLogo.style.opacity = '1';
+            initScrollReveals();
+          }, 800);
+        }
+      }, 2200); // Allow preloader animation to show fully
     });
   }
 
